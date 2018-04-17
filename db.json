@@ -1,11 +1,11 @@
 {
-  "data":
-        {
-          "FirstName":"Aniruddh",
-          "LastName":"Chaturvedi",
-          "Gender":"male",
-          "country":"India",
-          "About":"Helll",
-          "Hobbies":["Reading","Cycling","Tennis"]}
-        }
+  "posts": [
+    {
+      "id": 1,
+      "title": "hello"
+    }
+  ],
+  "profile": {
+    "name": "typicode"
+  }
 }
