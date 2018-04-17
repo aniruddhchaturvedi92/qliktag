@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.min.js"></script>
+    <script src="login.js"></script>
+
+</head>
+
+<body ng-app="Myapp">
+    <form name="myForm" ng-controller="Myctr" novalidate>
+
+        <p>
+            FirstName:
+            <input id="fname" type="text" ng-model="fname" required/>
+        </p>
+        <p>
+            LastName:
+            <input id="lname" type="text" ng-model="lname" required />
+        </p>
+        <p>
+            Gender
+            <input  type="radio" name="Radio1" ng-model="gen" value="male">Male
+            <input type="radio" name="Radio1" ng-model="gen" value="female">Female
+        </p>
+        <p>
+            Select a country:
+            <select id="contry" ng-model="ctry">
+
+                <option ng-repeat="x in dataary" value="{{x}}">{{x}}
+
+            </select>
+        </p>
+        <p>
+            About
+            <textarea id="about" ng-model="myTextarea"></textarea>
+
+        </p>
+        <p>
+            Hobbies
+            <br>
+            <input type="checkbox"  ng-model="all"> Check all
+            <br>
+            <input type="checkbox" name="chkbt1" value="Reading" ng-checked="all">Reading
+            <br>
+            <input type="checkbox" name="chkbt1" value="Cycling" ng-checked="all">Cycling
+            <br>
+            <input type="checkbox" name="chkbt1" value="Swimming" ng-checked="all">Swimming
+            <br>
+            <input type="checkbox" name="chkbt1" value="Tennis" ng-checked="all">Tennis
+            <br>
+            <input type="checkbox" name="chkbt1" value="Cricket" ng-checked="all">Cricket
+            <br>
+            <input type="checkbox" name="chkbt1" value="Football" ng-checked="all">Football
+            <br>
+            <input type="checkbox" name="chkbt1" value="Painting" ng-checked="all">Painting
+        </p>
+     
+
+        <button type="button" ng-click="submitLoginForm()">Submit</button>
+
+
+
+    </form>
+</body>
+
+</html>
