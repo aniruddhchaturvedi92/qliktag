@@ -1,1 +1,12 @@
+{
+  "data":
+        {
+          "FirstName":"Aniruddh",
+          "LastName":"Chaturvedi",
+          "Gender":"male",
+          "country":"India",
+          "About":"Helll",
+          "Hobbies":["Reading","Cycling","Tennis"]}
+        }
+}
 
