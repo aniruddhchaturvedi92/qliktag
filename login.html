@@ -4,28 +4,50 @@
 <head>
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.min.js"></script>
     <script src="login.js"></script>
+<style>
+.ng-invalid.ng-dirty {
+    
+border-color: #FA787E;
 
+}
+.ng-valid.ng-dirty {
+    
+    border-color: #78faf9;
+    
+    }
+
+</style>
 </head>
 
 <body ng-app="Myapp">
-    <form name="myForm" ng-controller="Myctr" novalidate>
+    <form name="myForm" ng-controller="Myctr" ng-submit="myForm.$valid && submitLoginForm()" novalidate>
 
         <p>
-            FirstName:
-            <input id="fname" type="text" ng-model="fname" required/>
+            FirstName: *
+            <input id="fname" type="text" name = "fname" ng-model="fname" required/>
+            <span style="color:red" ng-show="myForm.fname.$pristine && myForm.fname.$invalid">
+                    <span ng-show="myForm.fname.$error.required">Please enter FirstName</span>
+                    </span>
         </p>
         <p>
-            LastName:
-            <input id="lname" type="text" ng-model="lname" required />
+            LastName: *
+            <input id="lname" name="lname" type="text" ng-model="lname" required/>
+            <span style="color:red" ng-show="myForm.lname.$pristine && myForm.lname.$invalid">
+                    <span ng-show="myForm.lname.$error.required">Please enter LastName</span>
+                    </span>
         </p>
         <p>
-            Gender
-            <input  type="radio" name="Radio1" ng-model="gen" value="male">Male
-            <input type="radio" name="Radio1" ng-model="gen" value="female">Female
+            Gender *
+            <input  type="radio" name="Radio1" ng-model="gen" value="male" required>Male
+            <input type="radio" name="Radio1" ng-model="gen" value="female" required>Female
+            <span style="color:red" ng-show="myForm.Radio1.$pristine && myForm.Radio1.$untouched ">
+            <span ng-show="myForm.Radio1.$error.required">Please select gender</span>
         </p>
         <p>
-            Select a country:
-            <select id="contry" ng-model="ctry">
+            Select a country: *
+            <select id="contry" name="ctry" ng-model="ctry" required>
+                    <span style="color:red" ng-show="myForm.ctry.$dirty && myForm.ctry.$invalid ">
+                            <span ng-show="myForm.ctry.$error.required">Please select Country</span>    
 
                 <option ng-repeat="x in dataary" value="{{x}}">{{x}}
 
@@ -56,9 +78,10 @@
             <input type="checkbox" name="chkbt1" value="Painting" ng-checked="all">Painting
         </p>
      
+<input type="submit" value="submit"><br>
 
-        <button type="button" ng-click="submitLoginForm()">Submit</button>
-
+      
+{{result}}
 
 
     </form>
