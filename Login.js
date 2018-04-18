@@ -20,6 +20,12 @@ app.controller("Myctr", function ($scope, $http) {
 
 
     $scope.submitLoginForm = function () {
+         $scope.fname = "";
+        $scope.lname = "";
+        $scope.gen = "";
+        $scope.ctry = "";
+        $scope.myTextarea = "";
+        $scope.all = "";
         var hbs = [];
         var hbtv = document.getElementsByName("chkbt1");
 
