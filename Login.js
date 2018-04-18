@@ -1,24 +1,10 @@
 var app = angular.module("Myapp", []);
 app.controller("Myctr", function ($scope, $http) {
-
+    
     $scope.gen = "";
     $scope.ctry = "";
-    //    var temp = [{
-    //     "name" :"aniruddh",
-    //     "place": "bhopal",
-    //     "mob": "123544"
-
-    //     },{
-    //         "name" :"vivek",
-    //         "place": "bhopal",
-    //         "mob": "1235gt4"
-
-    //         }]
-
-    //      var temp2 = [1,2,3]
-
-
-    //     $scope.myData = temp[1].mob;
+    $scope.result = [];
+  
 
 
     $scope.dataary = [];
@@ -60,17 +46,20 @@ app.controller("Myctr", function ($scope, $http) {
             "Hobbies": hbs,
 
         }
-
+       $scope.result = JSON.stringify(formdata);
+        //alert(JSON.stringify(formdata));
         
+        console.log(formdata);
+      
 
-        $http({
-                method: 'PUT',
-                url: 'http://my-json-server.typicode.com/aniruddhchaturvedi92/qliktag/login',
-                data: formdata,
-                headers: {
-                    'Content-Type': 'application/x-www-form-urlencoded'
-                }
-            });
+        // $http({
+        //         method: 'PUT',
+        //         url: 'http://my-json-server.typicode.com/aniruddhchaturvedi92/qliktag/login',
+        //         data: formdata,
+        //         headers: {
+        //             'Content-Type': 'application/x-www-form-urlencoded'
+        //         }
+        //     });
     };
 
 
